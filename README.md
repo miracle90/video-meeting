@@ -88,7 +88,7 @@ apt-get install zlib1g-dev
 
 apt-get install openssl
 
- wget http://nginx.org/download/nginx-1.16.1.tar.gz
+wget http://nginx.org/download/nginx-1.16.1.tar.gz
 
 // 给文件夹添加权限 => chmod 777 certs
 
@@ -106,6 +106,49 @@ cd /usr/local/nginx => conf  html  logs  sbin
 ```
 
 ### 3、ssl证书配置
+
+### 4、coturn服务搭建
+
+```
+wget https://github.com/coturn/coturn/archive/4.5.1.1.tar.gz
+
+tar -zxvf 4.5.1.1.tar.gz
+
+cd coturn-4.5.1.1
+
+./configure --prefix=/usr/local/coturn
+
+make && make install
+
+cd /usr/local/coturn/etc
+
+# 复制一份
+cp turnserver.conf.default turnserver.conf
+
+vim turnserver.conf
+
+# 端口
+listening-port=3478
+# 服务器外网IP
+external-ip=49.232.89.57
+# 用户名密码
+user=codeboy:helloworld
+# 域名
+realm=stun.l.supercodeboy.com
+```
+
+### 5、ICE测试服务
+
+### 6、Janus Demo配置
+
+```
+netstat -nptl 查看端口占用情况
+
+# 配置Janus
+
+# 启动Janus服务器
+nohup /opt/janus/bin/janus >> /var/log/janus.log 2>&1 &
+```
 
 ## SFU架构
 
