@@ -142,9 +142,21 @@ realm=stun.l.supercodeboy.com
 ### 6、Janus Demo配置
 
 ```
-netstat -nptl 查看端口占用情况
+# nginx 配置
+
+支持https，证书，janus demo目录
+
+# netstat -nptl 查看端口占用情况
 
 # 配置Janus
+
+janus.jcfg.sample => 默认配置（https证书路径，coturn服务配置，stun，turn）
+
+janus.transport.http.jcfg.sample => https配置，进行信令交互（开启https、端口、证书）
+
+janus.transport.websockets.jcfg.sample => websocket服务配置（开启wss，端口，证书）
+
+janus.plugin.videoroom.jcfg => 配置插件
 
 # 启动Janus服务器
 nohup /opt/janus/bin/janus >> /var/log/janus.log 2>&1 &
