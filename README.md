@@ -162,6 +162,39 @@ janus.plugin.videoroom.jcfg => 配置插件
 nohup /opt/janus/bin/janus >> /var/log/janus.log 2>&1 &
 ```
 
+## 二、Janus信令系统
+
+* create
+* attach
+* success
+* error
+* ack
+* event
+* message
+* trickle
+* keepalive
+* webrtcup
+* media
+* slowlink
+* hangup
+
+## 三、使用Flutter进行客户端开发
+
+### 1、工程目录介绍
+### 2、权限采集
+
+* 安卓
+* ios
+
+### 3、依赖安装（flutter_webrtc）
+
+* pod install => 需要安装CocoaPods => 依赖Ruby v2.6.3
+* xcode配置
+
+### 4、客户端界面搭建
+
+### 5、janus下事务处理对象
+
 ## SFU架构
 
 ## Janus流媒体服务
