@@ -135,6 +135,9 @@ external-ip=49.232.89.57
 user=codeboy:helloworld
 # 域名
 realm=stun.l.supercodeboy.com
+
+# 启动服务
+/usr/local/bin/turnserver -c /usr/local/etc/turnserver.conf -o
 ```
 
 ### 5、ICE测试服务
